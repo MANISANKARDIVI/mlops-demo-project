@@ -1,0 +1,29 @@
+What is Machine Learning?
+Machine learning is a process of training a machine or computer with huge amount of data so that it identifies the patterns and predicts the output.
+
+what is a model?
+A model is basically output of the machine learning process after it has been trained with data, model is a mathematically function that maps input data to output predictions.
+
+what is dataset?
+A dataset is usually a data that has the information of different features  of the entities it represents, and it is used to train and evaluate machine learning models.
+
+what is feature?
+A feature is an individual measurable property or characteristic of a phenomenon being observed, and it is used as input to train machine learning models.
+
+what is MLOps?
+MLOps, short for Machine Learning Operations, is a set of practices that aims to deploy and maintain machine learning models in production reliably and efficiently.
+
+
+Machine Learning Lifecycle?
+The machine learning lifecycle refers to the series of stages that a machine learning project goes through, from problem definition and data collection to model deployment and monitoring. The typical stages include:
+- Problem Definition
+- Data Collection
+- Data Preparation / Data Cleaning
+- Feature Engineering
+- Model Selection
+- Model Training
+- Model Evaluation
+- Hyperparameter Tuning
+- Model Deployment
+- Monitoring and Maintenance
+

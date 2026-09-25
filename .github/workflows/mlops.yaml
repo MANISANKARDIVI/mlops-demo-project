@@ -24,7 +24,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run tests
+      - name: Train the model
         run: |
-          # Add your test command here
-          echo "Running tests..."
+          python train.py
+          ls -la artifacts
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: model-artifacts--${{ github.run_id }}
+          path: artifacts

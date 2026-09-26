@@ -7,3 +7,4 @@ mlflow==3.16.1
 dvc-s3==3.3.0
 dvc==3.67.1
 kubeflow==0.5.0
+matplotlib==3.11.2

@@ -1,4 +1,0 @@
-[core]
-    remote = wine_data
-['remote "wine_data"']
-    url = s3://mani-dvc-bucket

@@ -76,3 +76,52 @@ $ dvc push
 $ dvc pull
 
 
+What is the use of Mlflow?
+Mlflow is an open-source platform for managing the end-to-end machine learning lifecycle. It provides tools for experiment tracking, model management, and deployment, helping data scientists and ML engineers to organize and reproduce their work efficiently.
+
+for local development, you can set the MLflow tracking URI to your local server:
+# Default: SQLite database (mlflow.db in current directory port:5000)
+$ mlflow server
+
+# PostgreSQL: connect to an existing PostgreSQL database for production use
+$ mlflow server --backend-store-uri postgresql://username:password@host:port/database
+
+
+HOw to install Mlflow in k8s local by using kind?
+
+$ brew install kind
+
+$ kind create cluster --name mlflow-cluster
+
+
+now install helm
+$ brew install helm
+
+# Add the Helm repository for MLflow
+$ helm repo add community-charts https://community-charts.github.io/helm-charts
+$ helm repo update
+$ helm install mlflow community-charts/mlflow --version 1.11.7
+
+
+link --> https://artifacthub.io/packages/helm/community-charts/mlflow
+
+
+
+
+$ kubectl create ns mlflow
+
+helm upgrade --install mlflow community-charts/mlflow \
+  --namespace mlflow \
+  --set backendStore.databaseMigration=true \
+  --set backendStore.postgres.enabled=true \
+  --set backendStore.postgres.host=mlops-mlflow.c6v6kwok8xrr.us-east-1.rds.amazonaws.com \
+  --set backendStore.postgres.port=5432 \
+  --set backendStore.postgres.database=mlflow \
+  --set backendStore.postgres.user=mlflow_user \
+  --set backendStore.postgres.password=Mani9393
+
+
+kubectl create secret generic mlflow-db-secret \
+  -n mlflow \
+  --from-literal=username=mlflow_user \
+  --from-literal=password='Mani9393'

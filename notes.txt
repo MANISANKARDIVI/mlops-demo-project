@@ -27,3 +27,20 @@ The machine learning lifecycle refers to the series of stages that a machine lea
 - Model Deployment
 - Monitoring and Maintenance
 
+
+what is DVC?
+DVC, short for Data Version Control, is an open-source version control system for machine learning projects. It helps manage datasets, machine learning models, and experiments, enabling reproducibility and collaboration in ML workflows.
+
+Difference between Git and DVC?
+Git is version control system for source code,
+DVC is version control system for datasets and machine learning models.
+
+why Git is not enough for machine learning projects?
+Git is primarily designed for versioning source code, which is usually small in size. Machine learning projects involve large datasets and models that are not efficiently handled by Git. DVC complements Git by providing version control for these large files, ensuring reproducibility and efficient collaboration.
+
+
+how to install DVC?
+You can install DVC using pip, the Python package manager, with the following command:
+
+$ pip install dvc
+

@@ -42,5 +42,39 @@ Git is primarily designed for versioning source code, which is usually small in 
 how to install DVC?
 You can install DVC using pip, the Python package manager, with the following command:
 
+$ python3 -m venv .venv
+$ source .venv/bin/activate
 $ pip install dvc
+
+Then choose a dataset file, and add it to DVC using the following command:
+
+$ dvc add <dataset_filename>
+
+After adding the dataset to DVC, a corresponding `.dvc` file will be created. This file should be committed to Git to track the dataset version.
+
+how to track changes in DVC?
+After adding a dataset to DVC, you can track changes using Git. Whenever the dataset changes, you need to run `dvc add <dataset_filename>` again, which will update the corresponding `.dvc` file. Then, commit the changes to Git to keep track of the dataset version.
+
+How to store data in s3?
+To store data in Amazon S3 using DVC, you need to configure an S3 remote. Here are the steps:
+
+
+1. Configure the S3 remote:
+$ dvc remote add -d myremote s3://mybucket/path
+
+
+$ dvc remote modify myremote access_key_id <your_access_key_id>
+$ dvc remote modify myremote secret_access_key <your_secret_access_key>
+
+IMP: we need to add dvc_s3 package to enable S3 support in DVC.
+$ pip install dvc-s3
+
+
+2. Push the data to the S3 remote:
+$ dvc push
+
+
+3. Pull the data from the S3 remote:
+$ dvc pull
+
 

@@ -42,9 +42,9 @@ Git is primarily designed for versioning source code, which is usually small in 
 how to install DVC?
 You can install DVC using pip, the Python package manager, with the following command:
 
-$ python3 -m venv .venv
+$ uv venv
 $ source .venv/bin/activate
-$ pip install dvc
+$ uv pip install -r requirements.txt
 
 Then choose a dataset file, and add it to DVC using the following command:
 
